@@ -1,0 +1,898 @@
+/* ===== VARIABLES ===== */
+:root {
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --text-title: #1f2937;
+  --text-muted: #6b7280;
+  --border-light: rgba(0, 0, 0, 0.05);
+  --accent: #3b82f6;
+  --background: #f9fafb;
+  --ff: 'Oswald', sans-serif;
+  --w: rgb(255, 255, 255);
+  --w-light: rgb(236, 236, 236);
+  --b: rgb(15, 15, 15);
+  --sb: rgb(27, 27, 27);
+  --b-light: rgb(27, 27, 27);
+  --dark: #161616;
+  --primary: #002e6d;
+  --blp: #0a0e23;
+  --primaryh: #0164b5;
+  --secondary: #c2c2c2;
+  --secondaryh: rgb(175, 175, 175);
+  --clickhover: #d1d1d1;
+  --click: #1b739c5d;
+  --success: #006b429c;
+  --successh: #088153;
+  --danger: #b12f2fcb;
+  --dangerh: #350505cf;
+  --warning: #b47704;
+  --warningh: #d69d31;
+  --info: #777777;
+  --infoh: #c4c4c4;
+  --light: #f5fffe;
+  --sw: #dedede;
+  --bg: #000;
+  --tc: #fff;
+  --hb: #0f0f0f;
+  --gap: 20px;
+  --pad: 20px;
+  --en-bg: #d60b0b;
+  --hc: #3f3b24;
+  --set: #f1f1f1;
+  --sc: #292929;
+  --nfh: #1b1b1b;
+  --ec: #63d5f7;
+}
+
+/* ===== GLOBAL STYLES ===== */
+body,
+html {
+  background: linear-gradient(to bottom right, #f0f4f8, #dbe4ee, #b3d5f5);
+}
+
+/* Scrollbar Global */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primaryh);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primaryh);
+}
+
+/* Para Mozilla Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) rgba(255, 255, 255, 0.3);
+}
+
+/* ===== BUTTONS ===== */
+
+.btn-outline-primary {
+  color: var(--primary);
+  border-color: var(--primary);
+  --bs-btn-active-bg: var(--primaryh);
+  --bs-btn-active-border-bg: var(--primaryh);
+}
+
+.btn-outline-primary:hover {
+  color: var(--w) !important;
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline-primary:focus {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--w);
+}
+
+.btn-outline-success {
+  color: var(--success);
+  border-color: var(--success);
+}
+
+.btn-outline-success:hover {
+  background-color: var(--success);
+  color: var(--w);
+}
+
+.btn-outline-danger {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.btn-outline-danger:hover {
+  background-color: var(--danger);
+  color: var(--w);
+}
+
+.btn-outline-danger {
+  color: var(--danger);
+}
+
+.bg-light {
+  background-color: var(--light) !important;
+}
+
+:is(.primary, .btn-primary, .bg-primary) {
+  background-color: var(--primary) !important;
+  border: solid var(--primary) 0.2px !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--primaryh) !important;
+  border: solid var(--primaryh) 0.2px !important;
+}
+
+:is(.secondary, .btn-secondary, .bg-secondary) {
+  background-color: var(--secondary) !important;
+  border: solid var(--secondary) 0.2px !important;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondaryh) !important;
+  border: solid var(--secondaryh) 0.2px !important;
+}
+
+:is(.success, .btn-success, .bg-success) {
+  background-color: var(--success) !important;
+  border: solid var(--success) 0.2px !important;
+}
+
+.btn-success:hover {
+  background-color: var(--successh) !important;
+  border: solid var(--successh) 0.2px !important;
+}
+
+:is(.danger, .btn-danger, .bg-danger) {
+  background-color: var(--danger) !important;
+  border: solid var(--danger) 0.2px !important;
+}
+
+.btn-danger:hover {
+  background-color: var(--dangerh) !important;
+  border: solid var(--dangerh) 0.2px !important;
+}
+
+:is(.warning, .btn-warning, .bg-warning) {
+  background-color: var(--warning) !important;
+  border: solid var(--warning) 0.2px !important;
+}
+
+.btn-warning:hover {
+  background-color: var(--warningh) !important;
+  border: solid var(--warningh) 0.2px !important;
+}
+
+:is(.info, .btn-info, .bg-info) {
+  background-color: var(--info) !important;
+  border: solid var(--info) 0.2px !important;
+}
+
+.btn-info:hover {
+  background-color: var(--infoh) !important;
+  border: solid var(--infoh) 0.2px !important;
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--primary) !important;
+  color: white !important;
+}
+
+.nav-pills .nav-link {
+  color: var(--primary);
+}
+
+:is(
+  .primary,
+  .btn-primary,
+  .btn-primary:hover,
+  .secondary,
+  .btn-secondary,
+  .btn-secondary:hover,
+  .success,
+  .btn-success,
+  .btn-success:hover,
+  .danger,
+  .btn-danger,
+  .btn-danger:hover,
+  .warning,
+  .btn-warning,
+  .btn-warning:hover,
+  .info,
+  .btn-info,
+  .btn-info:hover
+) {
+  color: var(--w);
+}
+
+/* ===== CARDS ===== */
+.card {
+  background-color: #ffffffc9;
+  border-radius: 20px !important;
+}
+
+/* ===== FORMS ===== */
+.form-label {
+  font-weight: bold;
+  color: var(--primary);
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 3px;
+  margin-top: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus + .form-label,
+.form-select:focus + .form-label {
+  color: var(--primaryh);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .form-label {
+    font-size: 16px;
+    letter-spacing: 0.8px;
+  }
+}
+
+/* ===== UTILITIES: BORDER RADIUS ===== */
+.br-5 {
+  border-radius: 5px !important;
+}
+
+.br-10 {
+  border-radius: 10px !important;
+}
+
+.br-15 {
+  border-radius: 15px !important;
+}
+
+.br-20 {
+  border-radius: 20px !important;
+}
+
+.br-25 {
+  border-radius: 25px !important;
+}
+
+.br-30 {
+  border-radius: 30px !important;
+}
+
+.br-35 {
+  border-radius: 35px !important;
+}
+
+.br-40 {
+  border-radius: 40px !important;
+}
+
+.br-45 {
+  border-radius: 45px !important;
+}
+
+.br-50 {
+  border-radius: 50px !important;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.bold {
+  font-weight: bold !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-danger {
+  color: var(--danger) !important;
+}
+
+/* ===== LOADER & ANIMATIONS ===== */
+.loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+  margin: -40px 0 0 -40px;
+  border: 10px solid #ffffff;
+  border-radius: 50%;
+  border-top: 10px solid var(--primary);
+  animation: spin 2s linear infinite;
+  z-index: 10001;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== OVERLAYS ===== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  display: none;
+}
+
+.overlay.show {
+  display: block;
+  pointer-events: all;
+}
+
+/* ===== HEADER =====*/
+#header {
+  position: sticky;
+  top: 0;
+  width: 97%; /* Ahora ocupa el mismo ancho que tenía originalmente */
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px; /* Mismo estilo que las cards */
+  margin: 20px auto; /* Mantiene un margen */
+  padding: 15px;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--set);
+}
+
+/* Evita el scroll horizontal */
+#main-content {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Responsive: Mantiene proporciones en pantallas pequeñas */
+@media (max-width: 1024px) {
+  #header {
+    width: 100%; /* En pantallas pequeñas ocupa todo el ancho */
+    margin: 10px auto;
+  }
+}
+
+/* ===== SIDEBAR ===== */
+/* SIDEBAR */
+.sidebar {
+  width: 300px;
+  background-color: var(--set);
+  backdrop-filter: blur(8px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  color: var(--w);
+  transition: width 0.3s ease-in-out;
+  padding: var(--pad);
+  min-height: 100vh;
+  overflow-y: auto; /* Permite scroll solo dentro del sidebar */
+  overflow-x: hidden; /* Evita desbordamiento lateral */
+  padding-bottom: 20px;
+}
+
+/* Botones del Sidebar */
+.btn-sidebar {
+  background-color: transparent;
+  color: var(--primary);
+  border: none;
+  text-align: left;
+}
+
+.btn-sidebar:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-sidebar {
+  background-color: transparent;
+  color: var(--w);
+  border: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.btn-sidebar:hover,
+.btn-sidebar.active {
+  background-color: var(--primaryh);
+  color: var(--secondary);
+  border-radius: 5px;
+}
+
+/* Logo del Sidebar */
+.logo-sidebar {
+  height: 200px;
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  border: 3px solid var(--primaryh);
+}
+
+/* Submenús */
+.submenu-items {
+  list-style: none;
+  padding-left: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.submenu-items.open {
+  max-height: 500px;
+}
+
+.submenu-items li a {
+  text-decoration: none;
+  color: var(--w);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+}
+
+.submenu-items li a:hover {
+  color: var(--secondary);
+}
+
+/* ===== DATATABLES STYLES ===== */
+
+.dt-processing div div {
+  background-color: var(--primaryh) !important;
+}
+
+/* Search Field */
+#dt-search-0 {
+  width: 250px !important;
+  max-width: 100%;
+  border-radius: 10px !important;
+  border: 1px solid var(--primary) !important;
+  padding: 8px 12px;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#dt-search-0:focus {
+  outline: none !important;
+  border-color: var(--primaryh) !important;
+  box-shadow: 0 0 8px rgba(53, 113, 111, 0.5);
+}
+
+.dataTables_filter {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.dataTables_filter label {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 14px;
+}
+
+.dataTables_filter::before {
+  content: '\f002';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 10px;
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .dataTables_filter {
+    justify-content: center;
+  }
+
+  #dt-search-0 {
+    width: 100% !important;
+  }
+}
+
+.dt-buttons .btn-secondary {
+  background-color: transparent !important;
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+  font-size: 16px !important;
+  width: 300px;
+  border-radius: 20px !important;
+}
+
+.dt-buttons .btn-secondary:hover {
+  background-color: var(--primary) !important;
+  color: white !important;
+}
+
+/* Table Header */
+.table thead th {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 15px;
+  border-bottom: 3px solid var(--primaryh) !important;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.table thead th:hover {
+  background-color: var(--primaryh) !important;
+  box-shadow: 0px 0px 10px rgba(53, 113, 111, 0.4);
+  cursor: pointer;
+}
+
+.table thead th span.dt-column-title {
+  display: block;
+  font-weight: 700;
+}
+
+.table thead {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.table thead th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.table thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+/* Table Body */
+.table tbody tr {
+  background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(53, 113, 111, 0.15);
+  box-shadow: 0 4px 8px rgba(53, 113, 111, 0.2);
+  cursor: pointer;
+}
+
+.table tbody tr.selected {
+  background-color: var(--primary) !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #dee2e6;
+  text-align: left;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Table Info */
+.dt-info {
+  font-size: 14px;
+  color: var(--primary) !important;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: rgba(53, 113, 111, 0.1);
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Pagination */
+.dt-paging {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0px;
+}
+
+.dt-paging .page-item {
+  margin: 0 5px;
+}
+
+.dt-paging .page-link {
+  color: var(--primary) !important;
+  border: 1px solid var(--primary) !important;
+  padding: 6px 12px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 20px !important;
+}
+
+.dt-paging .page-link:hover {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+.dt-paging .page-item.active .page-link {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+  font-weight: bold;
+}
+
+.dt-paging .page-item.disabled .page-link {
+  background-color: #e9ecef !important;
+  color: #adb5bd !important;
+  cursor: not-allowed;
+  border-color: #dee2e6 !important;
+}
+
+/* DataTables Wrapper & Footer */
+.dataTables_wrapper {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dataTables_filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.table-responsive {
+  margin-bottom: 20px;
+}
+
+.dt-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.dt-info {
+  font-size: 14px;
+  color: var(--primary) !important;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: rgba(53, 113, 111, 0.1);
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.dt-paging {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0px;
+}
+
+.dt-paging .page-item {
+  margin: 0 5px;
+}
+
+.dt-paging .page-link {
+  color: var(--primary) !important;
+  background-color: #ffffff;
+  border: 1px solid var(--primary) !important;
+  border-radius: 8px;
+  padding: 6px 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.dt-paging .page-link:hover {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+.dt-paging .page-item.active .page-link {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+  font-weight: bold;
+}
+
+.dt-paging .page-item.disabled .page-link {
+  background-color: #e9ecef !important;
+  color: #adb5bd !important;
+  cursor: not-allowed;
+  border-color: #dee2e6 !important;
+}
+
+/* ===== MODALES  ===== */
+/* Estilos para el Modal */
+.modal-content {
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+/* Estilo para el Header del Modal */
+.modal-header {
+  background: var(--primary);
+  color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Título del Modal */
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Botón de Cerrar */
+.btn-close {
+  filter: brightness(90%);
+  background-color: var(--danger);
+}
+
+/* Estilo para el Body del Modal */
+.modal-body {
+  padding: 25px;
+  background: #f8f9fa;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+/* Estilo de los Labels */
+.modal-body .form-label {
+  font-weight: bold;
+  color: var(--primary);
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* Inputs y Selects */
+.modal-body .form-control,
+.modal-body .form-select {
+  border-radius: 10px;
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efecto Hover en Inputs y Selects */
+.modal-body .form-control:focus,
+.modal-body .form-select:focus {
+  border-color: var(--primaryh);
+  box-shadow: 0px 0px 8px rgba(53, 113, 111, 0.4);
+}
+
+/* Botones del Modal */
+.modal-footer {
+  background: rgba(0, 0, 0, 0.05);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Estilos para los Botones */
+.modal-footer .btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Botón de Cerrar */
+.modal-footer .btn-outline-danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.modal-footer .btn-outline-danger:hover {
+  background: var(--danger);
+  color: white;
+}
+
+/* Botón de Guardar */
+.modal-footer .btn-outline-primary {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.modal-footer .btn-outline-primary:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ===== SELCTS ===== */
+/* 🎨 Estilos para los Selects */
+.form-select {
+  border-radius: 10px;
+  border: 2px solid var(--primary);
+  background-color: #fff;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 15px;
+  transition: all 0.3s ease-in-out;
+  appearance: none;
+  position: relative;
+}
+
+/* 🎯 Flecha personalizada en Select */
+.form-select::after {
+  content: '▼';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: var(--primary);
+  pointer-events: none;
+}
+
+/* 🔥 Efecto Hover */
+.form-select:hover {
+  border-color: var(--primaryh);
+  background-color: #f8f9fa;
+}
+
+/* ✨ Efecto Focus */
+.form-select:focus {
+  border-color: var(--primaryh);
+  box-shadow: 0px 0px 8px rgba(53, 113, 111, 0.4);
+  outline: none;
+}
+
+/* 📱 Responsive: Ajuste para móviles */
+@media (max-width: 768px) {
+  .form-select {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+.carousel-item {
+  min-height: 300px;
+}
