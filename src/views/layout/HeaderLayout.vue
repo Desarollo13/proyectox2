@@ -12,13 +12,13 @@
       <div class="d-flex align-items-center gap-3">
         <!-- Notificaciones -->
         <div class="dropdown" @click="toggleDropdown">
-          <button class="btn btn-outline-primary position-relative rounded-circle p-1">
-            <i class="bi bi-bell"></i>
-            <span
-              class="badge bg-danger position-absolute top-0 start-100 translate-middle p-1 rounded-circle"
-            >3</span
-            >
-          </button>
+<!--          <button class="btn btn-outline-primary position-relative rounded-circle p-1">-->
+<!--            <i class="bi bi-bell"></i>-->
+<!--            <span-->
+<!--              class="badge bg-danger position-absolute top-0 start-100 translate-middle p-1 rounded-circle"-->
+<!--            >3</span-->
+<!--            >-->
+<!--          </button>-->
           <ul class="dropdown-menu dropdown-menu-end shadow px-2 animated-dropdown">
             <li class="dropdown-header fw-bold text-dark">Notificaciones</li>
             <li>

@@ -9,7 +9,7 @@ import DoughnutChart from '@/views/pages/dashboard/Dashboard-components/Doughnut
 
 <template>
   <div class="container-fluid pt-3 px-4">
-    <h1 class="h3 mb-4 text-primary"><i class="bi bi-bar-chart"></i> Dashboard</h1>
+    <h1 class="h3 mb-4 text-primary"><i></i></h1>
 
     <!-- RESUMEN PRINCIPAL -->
     <div class="row g-3 mb-4">
