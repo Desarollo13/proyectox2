@@ -15,6 +15,21 @@ import App from './App.vue';
 import router from './router';
 import { createBootstrap } from 'bootstrap-vue-next';
 
+
+import 'vuetify/styles';
+import { createVuetify } from 'vuetify';
+import * as vuetifyComponents from 'vuetify/components';
+import * as vuetifyDirectives from 'vuetify/directives';
+import '@mdi/font/css/materialdesignicons.css';
+
+const vuetify = createVuetify({
+  components: vuetifyComponents,
+  directives: vuetifyDirectives,
+  icons: { defaultSet: 'mdi' },
+});
+
+
+
 const app = createApp(App);
 
 const pinia = createPinia();
@@ -23,5 +38,6 @@ pinia.use(piniaPluginPersistedstate);
 app.use(pinia);
 app.use(router);
 app.use(createBootstrap());
+app.use(vuetify);
 
 app.mount('#app');
