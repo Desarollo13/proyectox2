@@ -8,8 +8,8 @@
           <!-- Logo y títulos -->
           <div class="text-center mb-4">
             <img src="../../../assets/img/logoNexen.png" alt="Logo Nexen" class="logo mb-3" />
-            <h1 class="fw-bold text-primary">Únete al equipo Nexen</h1>
-            <h5 class="text-secondary">Postúlate y forma parte de una empresa innovadora</h5>
+            <h1 class="fw-bold text-primary">Proyecto X</h1>
+            <h5 class="text-secondary">Prupuesta Genial </h5>
           </div>
 
           <!-- Barra de progreso -->

@@ -39,12 +39,19 @@ const form = reactive({
   apellido_paterno: '',
   apellido_materno: '',
   nombres: '',
+  Sucursal:'',
+  Area:'',
+  Puesto:'',
+  Roles:'',
+  Dominio:'',
   fecha_nacimiento: '',
   genero: '',
   correo_electronico: '',
   medio_contacto: '',
   telefono_casa: '',
   celular: '',
+  Jefe_Supervisión:'',
+
 });
 
 const fields = [
@@ -76,6 +83,11 @@ const fields = [
     errorMessage: 'Este campo es obligatorio.',
     status: '',
   },
+  { label: 'Sucursal', model: 'sucursal' ,errorMessage: 'Este campo es obligatorio.',},
+  {label: 'Area', model: 'area' ,errorMessage: 'Este campo es obligatorio.',},
+  {label: 'Puesto',model: 'puesto',errorMessage: 'Este campo es obligatorio.', },
+  {label:'Roles',model: 'roles' ,errorMessage: 'Este campo es obligatorio.',},
+  {label:'Jefe Supervisión',model: 'fecha_nacimiento', errorMessage: 'Este campo es obligatorio.',},
   {
     label: 'Correo Electrónico',
     model: 'correo_electronico',
@@ -84,21 +96,15 @@ const fields = [
     validator: (v) => /^\S+@\S+\.\S+$/.test(v),
     status: '',
   },
-  {
-    label: 'Medio de Contacto Vacante',
-    model: 'medio_contacto',
-    type: 'select',
-    options: ['Correo', 'Teléfono Casa', 'Celular'],
-    errorMessage: 'Este campo es obligatorio.',
-    status: '',
-  },
+
   {
     label: 'Teléfono Casa',
     model: 'telefono_casa',
     errorMessage: 'Este campo es obligatorio.',
     status: '',
   },
-  { label: 'Celular', model: 'celular', errorMessage: 'Este campo es obligatorio.', status: '' },
+  { label: 'Celular (Whats App)', model: 'celular', errorMessage: 'Este campo es obligatorio.', status: '' },
+  {label:'Dominio',model: 'dominio',errorMessage: 'Este campo es obligatorio.' },
 ];
 
 fields.forEach((field) => {
