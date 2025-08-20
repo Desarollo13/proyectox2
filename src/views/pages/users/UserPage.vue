@@ -1,8 +1,7 @@
 <template>
   <CardContainer>
     <DataTable
-      tableTitle="Usuarios Registrados"
-      tableIcon="bi-people-fill"
+      tableTitle="Propuesta Crud"
       :data="items"
       :columns="columns"
       :search="search"
@@ -44,10 +43,8 @@ const columns = [
 ];
 
 const items = ref([
-  { id: 1, name: 'Juan Pérez', email: 'juan@example.com', rol: 'administrador', status: 1 },
-  { id: 2, name: 'Ana Gómez', email: 'ana@example.com', rol: 'administrador', status: 1 },
-  { id: 3, name: 'Carlos Ruiz', email: 'carlos@example.com', rol: 'administrador', status: 1 },
-  { id: 4, name: 'Janeth Fuentes', email: 'jan@example.com', rol: 'administrador', status: 1 },
+  { id: 1, name: 'Luis Hernández', email: 'luis.hdz@example.com', rol: 'administrador', status: 2 },
+  { id: 2, name: 'María Torres', email: 'maria.torres@example.com', rol: 'administrador', status: 1 },
 ]);
 
 function handleCreate() {
